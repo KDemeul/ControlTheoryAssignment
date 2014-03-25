@@ -1,0 +1,13 @@
+\subsubsection{Exercise}
+
+We want to design a lead-lag controller which eliminates the static control error for a step response in the reference signal.
+
+The controller transfer function is the following:
+
+$$ F(s) = K \frac{\tau_D s + 1}{\beta \tau_D s + 1} \frac{\tau_I s + 1}{\tau_I s + \gamma}$$
+
+We want to fulfill the following criteria:
+\begin{itemize}
+ \item Phase margin of $30^{\circ}$ at the cross-over frequency $\omega_c = 0.4$ rad/s.
+ \item No static control error for a step response 
+\end{itemize}
