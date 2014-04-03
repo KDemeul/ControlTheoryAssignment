@@ -7,16 +7,10 @@ G = 3*(-s + 1) / ( (5*s + 1)*(10*s + 1) );
 omegaC = 0.4;
 phi0 = 50;
 
-% figure
-% hold on
-
-% bode(G)
-% grid
-% line('XData', [0.4 0.4], 'YData', [-1000 1000], 'LineStyle', '-.','LineWidth', 2, 'Color','black');
-
 %--------------------
 % Phase-lag action
 %--------------------
+
 gamma = 0;
 Ti = 10;
 
@@ -36,8 +30,6 @@ T = 1 / (omegaC * sqrt(a));
 K = sqrt(a)/m;
 
 Flead = K*(1+T*s)/(1 + a*T*s);
-% margin(F)
-% margin(F*G);
 
 Gc = G*Flag*Flead;
 
