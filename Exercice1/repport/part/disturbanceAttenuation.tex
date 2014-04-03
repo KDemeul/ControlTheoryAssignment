@@ -2,6 +2,14 @@
 
 In this subsection, we need to design a controller which both tracks the reference signal and attenuates the disturbances. 
 
+The transfer function of the system is:
+
+$$G(s) = \frac{20}{(s+1)((\frac{s}{20})^2+\frac{s}{20}+1)}$$
+
+The disturbance transfer function is:
+
+$$G_d(s) = \frac{10}{s+1}$$
+
 The purpose of this subsection is to designed the prefilter function and the feedback function ($F_r$ and $F_y$) with the following specifications:
 
 \begin{itemize}
