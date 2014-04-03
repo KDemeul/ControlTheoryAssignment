@@ -8,10 +8,10 @@ The controller transfer function is the following:
 $$ F(s) = K \frac{\tau_D s + 1}{\beta \tau_D s + 1} \frac{\tau_I s + 1}{\tau_I s + \gamma}$$
 
 We want to fulfill the following criteria:
-\begin{itemize}
+\begin{shortitemize}
  \item Phase margin of $30^{\circ}$ at the cross-over frequency $\omega_c = 0.4$ rad/s.
  \item No static control error for a step response 
-\end{itemize}
+\end{shortitemize}
 
 \paragraph{Phase-lag action}
 Setting the parameters $ \tau_I = 1$s and $\gamma = 0$ leads to an integral part in the system. 
@@ -20,18 +20,18 @@ This guarantee no static control error. ($\lim_{t\rightarrow\infty} e(t) = 0$).
 \paragraph{Phase-lead action}
 
 The lag-action of the controller leads to the following values in the frequency domain:
-\begin{itemize}
+\begin{shortitemize}
     \item Phase margin: $\phi_0 = -50^{\circ}$
     \item Gain: $|G(\omega = 0.4\text{ rad/s}| = 0.9436$ 
-\end{itemize}
+\end{shortitemize}
 
 Thus:
 
-\begin{itemize}
+\begin{shortitemize}
     \item $\beta = \frac{1 - \sin(30^{\circ}-\phi_0)}{1 + \sin(30^{\circ} - \phi_0)} = 0.0086$
     \item $\tau_D = \frac{1}{\omega_c \sqrt{a}} = 26.9459$
     \item $K = \frac{\sqrt{a}}{m} = 0.0983$
-\end{itemize}
+\end{shortitemize}
 
 \paragraph{Controller}
 

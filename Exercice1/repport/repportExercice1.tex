@@ -83,17 +83,22 @@
 % Dummy text
 %---------------------------------------------
 \usepackage{lipsum}
+
 %---------------------------------------------
 % Item package option 
 %---------------------------------------------
-\usepackage{enumitem}
+%\usepackage[shortlabels]{enumitem}
+\newenvironment{shortitemize}{
+    \begin{itemize}
+        \setlength{\itemsep}{0pt}
+        \setlength{\parskip}{0pt}
+        \setlength{\parsep}{0pt}
+    }{\end{itemize}}
+
 \begin{document}
 
 % Indent length
-\setlength\parindent{0em}
-\setlength\itemsep{0pt}
-\setlength\parskip{0pt}
-\setlength\parsep{0pt}
+%\setlength\parindent{0em}
 
 \maketitle
 
