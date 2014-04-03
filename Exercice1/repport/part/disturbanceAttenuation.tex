@@ -1,5 +1,19 @@
 \subsection{Disturbance attenuation}
-% \input{part/exercise421}
+
+In this subsection, we need to design a controller which both tracks the reference signal and attenuates the disturbances. 
+
+The purpose of this subsection is to designed the prefilter function and the feedback function ($F_r$ and $F_y$) with the following specifications:
+
+\begin{itemize}
+    \item Rise time $t_r \leq 0.2$ s
+    \item Overshoot $D(\%) \leq 10\%$
+    \item Step in the disturbance:
+        $$|y(t)| \leq 1, \forall t \text{ and } |y(t)| \leq 0.1, \forall t \geq 0.5\text{ s}$$ 
+    \item Control signal obeys:
+        $$|u(t) \leq 1, \forall t$$
+\end{itemize}
+
+\input{part/exercise421}
 % \input{part/exercise422}
 % \input{part/exercise423}
 % \input{part/exercise424}

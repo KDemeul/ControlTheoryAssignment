@@ -1,9 +1,9 @@
-\documentclass[a4paper,10pt,twocolumn]{article}
+\documentclass[a4paper,8pt,twocolumn]{extarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[center]{caption}
 \usepackage[english]{babel}
-% \usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
+\usepackage[top=3cm, bottom=3cm, left=2cm, right=2cm]{geometry}
 
 %---------------------------------------------
 % Font packages
@@ -74,37 +74,31 @@
 \setcounter{section}{3}
 \usepackage[explicit]{titlesec}
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
-\titleformat{\subsubsection}[hang]{\normalfont\normalsize\bfseries}%
+\titleformat{\subsubsection}[hang]{\Large\normalsize\bfseries\centering}%
     {}{4pt}%
-    {#1 \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
-
+    {\emph{#1 \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}} 
+    \titleformat{\paragraph}[hang]{\footnotesize\bfseries\centering}{}{4pt}{\emph{#1}}
 
 %---------------------------------------------
 % Dummy text
 %---------------------------------------------
 \usepackage{lipsum}
 
-%---------------------------------------------
-% Quote
-%---------------------------------------------
-\usepackage[babel=true]{csquotes}
-    
 \begin{document}
 
+% Indent length
 \setlength\parindent{0em}
 
- \maketitle
+\maketitle
 
-\tableofcontents
+%\tableofcontents
 
-\begin{abstract}
- \input{part/abstract}
-\end{abstract}
+\input{part/abstract}
 
 \section{Exercises}
 
 \input{part/basic}
 
-% \input{part/disturbanceAttenuation}
+\input{part/disturbanceAttenuation}
 
 \end{document}
