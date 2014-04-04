@@ -15,7 +15,9 @@ $$L(s) = F_y G \approx \frac{\omega_c}{s}$$
 Let:
 $$F_y = G^{-1} \frac{\omega_c}{s} = \frac{200 s^3 + 4200 s^2 + 84000 s + 80000}{160000 s}$$
 
-This controller has $3$ zero and $1$ pole. Thus, it is not proper. However -- using \texttt{Matlab} -- we can plot the step response of the system and the step response to a step perturbation (see Figure \ref{stepNonProper}).
+This controller has $3$ zero and $1$ pole.
+Thus, it is not proper.
+However -- using \texttt{Matlab} -- we can plot the step response of the system and the step response to a step perturbation (see Figure \ref{stepNonProper}).
 
 \begin{figure}[h!t]
     \centering
@@ -27,7 +29,9 @@ This controller has $3$ zero and $1$ pole. Thus, it is not proper. However -- us
 We can see that even if the performance are poor (Error static $\leq 5\%$ for $t \geq t_d = 7$ s) we still have an attenuation of the perturbation and a step response of good quality.
 
 \paragraph{Proper feedback}
-Assuming that this controller is the one we want to implement, we need to design it in a proper way. For now, it has $3$ zeros and $1$ pole. Therefore it is needed to add two more poles.
+Assuming that this controller is the one we want to implement, we need to design it in a proper way.
+For now, it has $3$ zeros and $1$ pole.
+Therefore it is needed to add two more poles.
 
 Let:
 $$F_y(s) = G^{-1}\frac{\omega_c}{s(s+p_1)(s+p_2)}$$
@@ -41,7 +45,10 @@ We use the following criteria:
     \item $p_1$ and $p_2$ take action after $\omega_c$ 
 \end{shortitemize}
 
-Let's pick $p_1 = p_2 = p = 100\omega_c$. In order to have the same bode diagram for $\omega < \omega_c$, we need to translate the gain curve with a gain of $p^2$. Figure \ref{bodeProper421} shows the bode diagram of $L(s) = F_y(s) G(s)$ (we can see that $\forall \omega < \omega_c, |L_{proper}|_{dB} \approx |L_{unproper}|_{dB}$). Figure \ref{stepProper421} shows that the step response to a perturbation with $L_{proper}$ is almost the same than with $L_{unproper}$.
+Let's pick $p_1 = p_2 = p = 100\omega_c$.
+In order to have the same bode diagram for $\omega < \omega_c$, we need to translate the gain curve with a gain of $p^2$.
+Figure \ref{bodeProper421} shows the bode diagram of $L(s) = F_y(s) G(s)$ (we can see that $\forall \omega < \omega_c, |L_{proper}|_{dB} \approx |L_{unproper}|_{dB}$).
+Figure \ref{stepProper421} shows that the step response to a perturbation with $L_{proper}$ is almost the same than with $L_{unproper}$.
 
 \begin{figure}[h!b]
     \includegraphics[width=\columnwidth]{fig/bodeProper421.eps}
