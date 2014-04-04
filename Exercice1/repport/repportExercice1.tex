@@ -55,7 +55,7 @@
 %---------------------------------------------
 % two column option
 %---------------------------------------------
-%\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{0.5cm}
 
 %---------------------------------------------
 % Table of content
@@ -76,9 +76,10 @@
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
 \titleformat{\subsubsection}[hang]{\Large\normalsize\bfseries\centering}%
     {}{4pt}%
-    {\emph{#1 \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}} 
-    \titleformat{\paragraph}[hang]{\footnotesize\bfseries\centering}{}{4pt}{\emph{#1}}
+    {\dotfill\hspace{0.5cm}\emph{#1 \arabic{section}.\arabic{subsection}.\arabic{subsubsection}}\hspace{0.5cm}\dotfill} 
 
+    \titleformat{\paragraph}[hang]{\footnotesize\bfseries\centering}{}{4pt}{\emph{#1}}
+    %\titleformat{\paragraph}[hang]{\footnotesize\bfseries}{}{4pt}{\dotfill\hspace{0.5cm}\emph{#1}\hspace{0.5cm}\dotfill}
 %---------------------------------------------
 % Dummy text
 %---------------------------------------------
@@ -98,7 +99,7 @@
 \begin{document}
 
 % Indent length
-%\setlength\parindent{0em}
+\setlength\parindent{0em}
 
 \maketitle
 
