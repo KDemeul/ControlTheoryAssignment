@@ -19,7 +19,7 @@ This guarantee no static control error. ($\lim_{t\rightarrow\infty} e(t) = 0$).
 
 \paragraph{Phase-lead action}
 
-The lag-action of the controller leads to the following values in the frequency domain:
+The lead-action of the controller leads to the following values in the frequency domain:
 \begin{shortitemize}
     \item Phase margin: $\phi_0 = -50^{\circ}$
     \item Gain: $|G(\omega = 0.4\text{ rad/s}| = 0.9436$ 
@@ -39,19 +39,14 @@ The two previous paragraph lead to the design of the controller as:
 
 $$ F(s) = K \frac{\tau_D s + 1}{\beta \tau_D s + 1} \frac{\tau_I s + 1}{\tau_I s + \gamma} = 0.0983 \frac{26.9459 s + 1}{0.2319 s + 1}\frac{s+1}{s}$$
 
-Figure \ref{figbode411} \& \ref{figstep411} show the bode diagrams of the different function of the system and the step response. 
+Figure \ref{figstep411} shows the bode diagrams of the different function of the system and the step response. 
 
 The two criteria (phase-margin and static error null) are fulfilled.
 
-\begin{figure}[h!b]
+\begin{figure}[h!t]
     \includegraphics[width=\columnwidth]{fig/bode411.eps}
-    \caption{Bode diagram of the system's functions\\ Phase-margin: $30^{\circ}$} 
-    \label{figbode411}
-\end{figure}
-
-\begin{figure}[h!b]
     \includegraphics[width=\columnwidth]{fig/step411.eps}
-    \caption{Step response of the system with and without the controller\\ Phase-margin: $30^{\circ}$}
+    \caption{Bode diagram of the system's functions \\ Step response of the system with and without the controller\\ Phase-margin: $30^{\circ}$}
     \label{figstep411}
 \end{figure}
 

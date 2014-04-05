@@ -1,7 +1,7 @@
-\documentclass[a4paper,9pt,twocolumn]{extarticle}
+\documentclass[a4paper,8pt,twocolumn]{extarticle}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
-\usepackage[center]{caption}
+\usepackage[center, font=small]{caption}
 \usepackage[english]{babel}
 \usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 
@@ -26,13 +26,12 @@
 \usepackage{array}
 % \def\sgn{\mathop{\rm sgn}\nolimits} 
 % \usepackage{bbm}
-
+\usepackage{schemabloc}
 
 %---------------------------------------------
 % item option
 %---------------------------------------------
 \renewcommand{\labelitemi}{-}
-
 
 %---------------------------------------------
 %HEADER & FOOTER
@@ -111,6 +110,9 @@
 
 \input{part/basic}
 
+%\newpage
+
 \input{part/disturbanceAttenuation}
 
+\input{part/conclusion}
 \end{document}
