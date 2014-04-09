@@ -11,16 +11,17 @@ bode(Gd);
 
 wc = 10;    %attenuation Gd
 
-wi = wc;
+wi = 5;
 
-w0 = 75;
-w1 = 0;
+w0 = 50;
+w1 = w0;
 
 Fy = (s+wi)/s*G^(-1)*Gd;
-Fym = w0*Fy/(s+w0)/(s+w1);
+Fym = w0*w1*Fy/(s+w0)/(s+w1);
 
-hold on
-bode(Fy);
+bode((s+wi)/s);
+bode(Fym);
+bode(Fym*G);
 
 S = (1+Fy*G)^(-1);
 T = 1-S;
@@ -40,7 +41,7 @@ step(Gd*feedback(1,Fym*G));
 %--------------------
 
 omegaC = 15;
-phi0 = 70;
+phi0 = 50;
 
 [m,p] = bode(G*Fym,omegaC);
 p = p;
@@ -61,7 +62,7 @@ step(feedback(Flead*Fym*G,1));
 figure
 margin(Flead*Fym*G);
 
-tau = 0.21;
+tau = 0.14;
 
 Fr = 1/(1+tau*s);
 
@@ -79,6 +80,14 @@ s1 = step(Flead*Fym*Fr*(1+Flead*Fym*G)^-1,1);
 s2 = step(Fym*Flead*Gd*(1+Flead*Fym*G)^-1,1);
 plot(s1);
 hold on
-plot(s2);
+plot(s2,'r');
 
 U = max(s1)+max(s2)
+
+S = (1 + Flead*Fym*G)^-1;
+T = 1 - S;
+
+figure
+bode(S);
+hold on
+bode(T);
