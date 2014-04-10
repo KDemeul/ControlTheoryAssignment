@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#latex repportExercice2.tex && bibtex repportExercice2 && latex repportExercice2.tex && dvipdfm repportExercice2.dvi
+
+latex repportExercice2.tex && dvipdfm repportExercice2.dvi
