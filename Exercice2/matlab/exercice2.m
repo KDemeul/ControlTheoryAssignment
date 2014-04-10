@@ -2,6 +2,8 @@ close all
 clear all
 clc
 
+syms s
+
 sysmp = minphase;
 sysnmp = nonminphase;
 
