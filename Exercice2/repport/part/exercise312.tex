@@ -5,32 +5,40 @@
 Poles and zeros of the multivariable system in the minimum phase model case are:
 
 $$
-    \text{Poles}(G(s)) = 
+\text{Poles}(G_{mp}(s)) = 
     \left(\begin{array}{c}  
-            -.056 \text{ (double)} \\
-            -.052 \text{ (double)} \\
+    -.056 \text{ (double)} \\
+    -.052 \text{ (double)} \\
     -.021 \\
     -.026 \\
     \end{array}\right)
 $$
 $$
-    \text{Zeros}(G(s)) = 
+\text{Zeros}(G_{mp}(s)) = 
     \left(\begin{array}{c}
-              -.0093 \\
-                 -.038 \\
-                    -.056 \\
-                       -.052 \\
+    -.0093 \\
+    -.038 \\
+    -.056 \\
+    -.052 \\
     \end{array}\right)
 $$
 
 \paragraph{Non-minimum phase model}
 
-Poles and zeros of the multivariable system in the minimum phase model case are:
+Poles and zeros of the multivariable system in the non-minimum phase model case are:
 
 $$
-\text{Poles}(G(s)) = \left(\begin{array}{c} -.051 \text{ (double)}\\ -.047 \text{ (double)} \\-.091 \\ -.086\\ \end{array}\right)
+\text{Poles}(G_{nmp}(s)) = \left(\begin{array}{c} -.051 \text{ (double)}\\ -.047 \text{ (double)} \\-.091 \\ -.086\\ \end{array}\right)
 $$
 $$
-\text{Zeros}(G(s)) = \left(\begin{array}{c} -.24\\ .059\\ -.051\\ -.047 \end{array}\right)
+\text{Zeros}(G_{nmp}(s)) = \left(\begin{array}{c} -.24\\ .059\\ -.051\\ -.047 \end{array}\right)
 $$
 
+We see that there is one zero of $G(s)$ is in the right-hand side of the complex plane.
+Therefore the system is \emph{(indeed)} a non-minimum phase systems.
+This system offers a gain in the wrong direction for rapid inputs: the cross over frequency should be small.
+
+Using the rule of thumb defined in the course the bandwith limitation is :
+$$
+\omega_{BS} \leq \frac{z}{2} = .029
+$$
