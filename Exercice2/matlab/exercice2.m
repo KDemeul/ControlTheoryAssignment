@@ -2,7 +2,7 @@ close all
 clear all
 clc
 
-
+digits(2)
 
 sysmp = minphase;
 sysnmp = nonminphase;
@@ -32,6 +32,21 @@ znmp = tzero(Gnmp);
 pmp = pole(Gmp);
 pnmp = pole(Gnmp);
 
-sigma(Gmp)
-hold on
-sigma(Gnmp)
+sigmamp = sigma(Gmp);
+sigmanmp = sigma(Gnmp);
+
+Ginfmp = norm(Gmp,'Inf');
+Ginfnmp = norm(Gnmp,'Inf');
+
+RGAmp = Gmp.*(Gmp^-1)';
+RGAnmp = Gnmp.*(Gnmp^-1)';
+
+RGA0mp = zeros(size(RGAmp,1),size(RGAmp,2));
+RGA0nmp = zeros(size(RGAnmp,1),size(RGAnmp,2));
+
+for i=1:size(RGAmp,1)
+    for j=1:size(RGAmp,2)
+        RGA0mp(i,j) = vpa(poly2sym(cell2mat(RGAmp(i,j).num),0)/poly2sym(cell2mat(RGAmp(i,j).den),0));
+        RGA0nmp(i,j) = vpa(poly2sym(cell2mat(RGAnmp(i,j).num),0)/poly2sym(cell2mat(RGAnmp(i,j).den),0));
+    end
+end
