@@ -2,8 +2,22 @@ function [ code ] = cell2latex( c )
 %UNTITLED5 Summary of this function goes here
 %   Detailed explanation goes here
 
+code = [];
+for i=1:size(c,1)
+    si = [];
+    for j=1:size(c,2)
+        si = [si,'c'];
+        code = [code,matrix2latex(c{i,j})];
+        if j~=size(c,2)
+            code = [code,' & '];
+        end
+    end
+    if i ~=size(c,1)
+        code = [code,' \\ '];
+    end
+end
 
-code = ['\left(\begin{array}{cc} ',matrix2latex(c{1,1}),' & ',matrix2latex(c{1,2}),' \\ ',matrix2latex(c{2,1}),' & ',matrix2latex(c{2,2}),' \\ \end{array}\right)'];
+code = ['\left(\begin{array}{',si,'} ',code,' \\ \end{array}\right)'];
 
 end
 
