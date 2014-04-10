@@ -1,3 +1,51 @@
 \subsubsection{Exercice}
 \paragraph{Minimum phase model}
+
+The RGA of the minimum phase system at frequency $0$ is:
+
+\begin{multline*} 
+    \text{RGA}(G_{mp}(0)) = \\
+    G_{mp}(0) .* [G_{mp}^{-1}(0)]^T = \\
+    \left(\begin{array}{cc} 1.6 & -0.56\\ -0.56 & 1.6 \end{array}\right)
+\end{multline*}
+
+Using the second rule of thumb expressed in the subject gives the following result:
+
+\begin{center}
+\begin{tabular}{|c|cc|}
+    \hline
+    \backslashbox{Out}{In}& 1 & 2 \\
+    \hline
+        1 & $1$ & $0$ \\
+        2 & $0$ & $1$ \\
+    \hline
+\end{tabular} \ \\ \ \\
+($0$ -- avoid pairing, $1$ -- pairing possible).
+\end{center}
+
 \paragraph{Non-minimum phase model}
+
+The RGA of the non-minimum phase system at frequency $0$ is:
+
+\begin{multline*}
+    \text{RGA}(G_{nmp}(0)) = \\ 
+    G_{nmp}(0) .* [G_{nmp}^{-1}(0)]^T =  \\
+    \left(\begin{array}{cc} -0.56 & 1.6\\ 1.6 & -0.56 \end{array}\right)
+\end{multline*}
+
+Using the second rule of thumb expressed in the subject gives the following result:
+
+\begin{center}
+\begin{tabular}{|c|cc|}
+    \hline
+    \backslashbox{Out}{In}& 1 & 2 \\
+    \hline
+        1 & $0$ & $1$ \\
+        2 & $1$ & $0$ \\
+    \hline
+\end{tabular} \ \\ \ \\
+($0$ -- avoid pairing, $1$ -- pairing possible).
+\end{center}
+
+
+\textbf{Remark:} The two RGA matrix at frequency $0$ are symetrical. This seems legit since the alimentation of tanks 1 \& 4 is made by pump 1 and the alimentation of tanks 2 \& 3 is made by pump 2.

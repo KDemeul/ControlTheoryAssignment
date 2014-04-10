@@ -1,9 +1,9 @@
 \subsubsection{Exercice}
 \paragraph{Minimum phase model}
 
-The transfer matrix $G(s)$ in the minimum phase model is:
+The transfer matrix $G_{mp}(s)$ is:
 
-$$G(s) = \left(\begin{array}{cc} 
+$$G_{mp}(s) = \left(\begin{array}{cc} 
     \frac{.035}{s + .056} & \frac{.00046}{s^2 + .082 s + .0015} \\
     \\
     \frac{ .00044}{  s^2 + .073 s + .0011} & \frac{.030}{s + .052} \\
@@ -13,16 +13,16 @@ $$G(s) = \left(\begin{array}{cc}
 Poles and zeros of the elements are given in the following table:
 
 $$
-\text{Poles}(G_{i,j}(s)) = \left(\begin{array}{cc} -.056 & \left(\begin{array}{c} -.056\\ -.026 \end{array}\right) \\ \left(\begin{array}{c} -.052\\ -.021 \end{array}\right) & -.052 \\ \end{array}\right)
+\text{Poles}(G_{mp,i,j}(s)) = \left(\begin{array}{cc} -.056 & \left(\begin{array}{c} -.056\\ -.026 \end{array}\right) \\ \left(\begin{array}{c} -.052\\ -.021 \end{array}\right) & -.052 \\ \end{array}\right)
 $$
 
-$$\text{Zeros}(G_{i,j}(s)) = \emptyset $$
+$$\text{Zeros}(G_{mp,i,j}(s)) = \emptyset $$
 
 \paragraph{Non-minimum phase model}
 
-The transfer matrix $G(s)$ in the non-minimum phase model is:
+The transfer matrix $G_{nmp}(s)$ is:
 
-$$G(s) = \left(\begin{array}{cc} 
+$$G_{nmp}(s) = \left(\begin{array}{cc} 
     \frac{.021}{s + .051} & \frac{.0026}{s^2 + .14 s + .0044} \\
     \\
     \frac{ .0032}{ s^2 + .14 s + .0043} & \frac{.018}{s + .047} \\
@@ -31,8 +31,8 @@ $$G(s) = \left(\begin{array}{cc}
 Poles and zeros of the elements are given in the following table:
 
 
-$$\text{Poles}(G_{i,j}(s)) = 
+$$\text{Poles}(G_{nmp,i,j}(s)) = 
 \left(\begin{array}{cc} -.051 & \left(\begin{array}{c} -.086\\ -.051 \end{array}\right) \\ \left(\begin{array}{c} -.091\\ -.047 \end{array}\right) & -.047 \\ \end{array}\right)
 $$
 
-$$\text{Zeros}(G_{i,j}(s)) = \emptyset $$
+$$\text{Zeros}(G_{nmp,i,j}(s)) = \emptyset $$
