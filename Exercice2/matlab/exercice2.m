@@ -76,8 +76,8 @@ F2nmp = tf([K2nmp*T2nmp K2nmp],[T2nmp 0]);
 F = [F1mp,0;0,F2mp];
 G = Gmp;
 
-% F = [0 F1nmp;F2nmp 0];
-% G = Gnmp;
+F = [0 F1nmp;F2nmp 0];
+G = Gnmp;
 
 L = F*G; 
 
