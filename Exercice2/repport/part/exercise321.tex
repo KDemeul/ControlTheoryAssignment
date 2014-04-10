@@ -1,3 +1,29 @@
 \subsubsection{Exercice}
-\paragraph{Minimum phase model}
-\paragraph{Non-minimum phase model}
+
+The specification of the controlled system are the following:
+
+\begin{shortitemize}
+    \item Phase margin: $\varphi_m = \pi/3$
+    \item Crossover frequency: 
+        \begin{shortitemize}
+            \item Minimum phase system: $\omega_{c,m} = .1$rad/s
+            \item Non-minimum phase system: $\omega_{c,nm} = .02$rad/s
+        \end{shortitemize}
+\end{shortitemize}
+
+As we can see $\omega_{c,nm} \leq .029$ (see Exercise 3.1.2). Therefore the RHP zero will not be a problem.
+
+The controller are designed using the method depicted in the subject. 
+We have the following values:
+
+\begin{center}
+    \begin{tabular}{|c|cc|}
+        \hline
+        & $f_1(s)$ & $f_2(s)$ \\
+        \hline
+        $F_{m}(s)$ & & \\
+        $F_{nm}(s)$ & & \\
+       \hline 
+    \end{tabular}
+\end{center}
+

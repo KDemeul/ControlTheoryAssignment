@@ -1,6 +1,24 @@
 \subsection{Decentralized control}
 
-% \input{part/exercise321}
+In this section we will investigate the control of the four-tank process with a decentralized control. 
+
+\paragraph{Minimum phase system}
+
+In the minimum phase system the input $u_1$ is coupled with $y_1$ and $u_2$ is coupled with $y_2$. 
+
+We will therefore use:
+
+$$F_m(s) = \left[\begin{array}{cc} f_1(s) & 0 \\ 0 & f_2(s) \end{array}\right]$$
+
+\paragraph{Non-minimum phase system}
+
+In the non-minimum phase system the input $u_1$ is coupled with $y_2$ and $u_2$ is coupled with $y_1$. 
+
+We will therefore use:
+
+$$F_{nm}(s) = \left[\begin{array}{cc} 0 & f_1(s) \\ f_2(s) & 0 \end{array}\right]$$
+
+\input{part/exercise321}
 % \input{part/exercise322}
 % \input{part/exercise323}
 % \input{part/exercise324}
