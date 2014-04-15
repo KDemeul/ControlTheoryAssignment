@@ -81,10 +81,12 @@ G = Gnmp;
 
 L = F*G; 
 
+bode(L);
+
 I = tf(eye(size(G*F)));
 S = (I+G*F)^-1;
 T = S*G*F;
-
-sigma(S);
-hold on
-sigma(T);
+% 
+% sigma(S);
+% hold on
+% sigma(T);
