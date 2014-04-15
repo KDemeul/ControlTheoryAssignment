@@ -76,10 +76,28 @@ F2nmp = tf([K2nmp*T2nmp K2nmp],[T2nmp 0]);
 F = [F1mp,0;0,F2mp];
 G = Gmp;
 
-F = [0 F1nmp;F2nmp 0];
-G = Gnmp;
+% F = [0 F1nmp;F2nmp 0];
+% G = Gnmp;
 
 L = F*G; 
+
+% figure
+% hold on
+% margin(L(1,1));
+% margin(L(2,2))
+% grid
+% % ----------
+% 
+% F = [0 F1nmp;F2nmp 0];
+% G = Gnmp;
+% 
+% L = F*G; 
+% 
+% figure
+% hold on
+% margin(L(1,2));
+% margin(L(2,1))
+% grid
 
 I = tf(eye(size(G*F)));
 S = (I+G*F)^-1;
