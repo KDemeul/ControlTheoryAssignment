@@ -1,4 +1,4 @@
-Control Theory and Practice,
+Control Theory and Practice
 =======================
 Advanced Course
 -----------------------
