@@ -1,1 +1,53 @@
-\subsubsection{Exercise} \lipsum[1-2]
+\subsubsection{Exercise} 
+
+We have the following equation for each tank:
+\begin{equation}
+A \frac{dh}{dt} = q_{in} - q_{out} 
+\label{floweq}
+\end{equation}
+
+The following table establish $q_{in}$ and $q_{out}$ for each tank:
+$$
+\begin{array}{|c|cc|}
+    \hline
+    & q_{in} & q_{out} \\
+    \hline
+    \text{Tank} 1 & \gamma_1k_1u_1+a_3\sqrt{2gh_3} & a_1\sqrt{2gh_1} \\
+    \text{Tank} 2 & \gamma_2k_2u_2+a_4\sqrt{2gh_4} & a_2\sqrt{2gh_2} \\
+    \text{Tank} 3 & (1-\gamma_2)k_2u_2 & a_3\sqrt{2gh_3} \\ 
+    \text{Tank} 4 & (1-\gamma_1)k_1u_1 & a_4\sqrt{2gh_4} \\ 
+    \hline
+\end{array}
+$$
+
+Therefore according to equation (\ref{floweq}): 
+$$
+    \begin{array}{rcl}
+    A_1 \frac{dh_1}{dt} & = &
+        \gamma_1k_1u_1+a_3\sqrt{2gh_3} - a_1\sqrt{2gh_1} \\
+    A_2 \frac{dh_2}{dt} & = &
+        \gamma_2k_2u_2+a_4\sqrt{2gh_4} - a_2\sqrt{2gh_2} \\
+    A_3 \frac{dh_3}{dt} & = &
+        (1-\gamma_2)k_2u_2 - a_3\sqrt{2gh_3} \\ 
+    A_4 \frac{dh_4}{dt} & = &
+    (1-\gamma_1)k_1u_1 - a_4\sqrt{2gh_4} \\ 
+    \end{array}
+$$
+
+And finally:
+\begin{equation}
+        \begin{array}{rcl}
+    \frac{dh_1}{dt} & = &
+            - \frac{a_1}{A_1}\sqrt{2gh_1} + \frac{a_3}{A_1}\sqrt{2gh_3} + \frac{\gamma_1k_1}{A_1}u_1\\ 
+
+    \frac{dh_2}{dt} & = &
+            - \frac{a_2}{A_2}\sqrt{2gh_2} + \frac{a_4}{A_2}\sqrt{2gh_4} + \frac{\gamma_2k_2}{A_2}u_2\\ 
+
+    \frac{dh_3}{dt} & = &
+            \frac{a_3}{A_3}\sqrt{2gh_3}+\frac{(1-\gamma_2)k_2}{A_3}u_2 \\ 
+
+    \frac{dh_4}{dt} & = &
+            \frac{a_4}{A_4}\sqrt{2gh_4}+\frac{(1-\gamma_1)k_1}{A_4}u_1 \\ 
+        \end{array}
+    \label{tanksyseq}
+\end{equation}
