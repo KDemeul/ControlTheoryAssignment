@@ -6,8 +6,54 @@ $$
 \underbrace{\left[ (1+sT_3)(1+sT_4) - \frac{(1-\gamma_1)(1 - \gamma_2)}{\gamma_1\gamma2}\right]}_{P(s)}
 $$
 
+$P$ is a second degree polynom. Its discrimant is:
+
 $$
-P(s) = 
+\Delta_P = (T_3+T_4)^2 - 4\frac{T_3T_4}{\gamma_1\gamma_2}(\gamma_1+\gamma_2-1) 
 $$
 
+    $$\ast \phantom{aa} \text{If} \phantom{a} 0 < \gamma_1 + \gamma_2 \leq 1$$
+In that case $\gamma_1 + \gamma_2 - 1 \leq 0$. 
 
+Therefore
+$\Delta_P \geq 0$.
+
+The roots of $P$ are given by:
+$$
+p_{1,2} = \frac{-(T_3+T_4) \pm_\text{\tiny{2}}^\text{\tiny{1}} \sqrt{\Delta_P}}{2T_3T_4}
+$$
+
+And 
+\begin{multline*}
+    -4\frac{T_3T_4}{\gamma_1\gamma_2}(\gamma_1+\gamma_2-1) \geq 0 \\ \Leftrightarrow \Delta_P \geq (T_3+T_4)^2 \Leftrightarrow \sqrt{\Delta_P}\geq (T_3+T_4)$$
+\end{multline*}
+Leading to:
+$$
+p_1 = \frac{-(T_3+T_4) + \sqrt{\Delta_P}}{2T_3T_4} \geq 0
+$$
+
+The system is non-minimum phase.
+
+
+    $$\ast \phantom{aa} \text{If} \phantom{a} 1 < \gamma_1 + \gamma_2 \leq 2$$
+In that case $\gamma_1+\gamma_2 -1 > 0$.
+
+Therefore
+$\Delta_P < 0$.
+
+The real-part of the roots of $P$ is:
+$$
+\Re(p_{1,2}) = -\frac{(T_3+T_4)}{2T_3T_4} \leq 0
+$$
+
+The system is minimum phase.
+
+\paragraph{Recap}
+
+We prooved the following:
+$$
+\begin{array}{rcl}
+    0 < \gamma_1 + \gamma_2 \leq 1 & \Rightarrow & \text{Minimum phase system} \\
+    1 < \gamma_1 + \gamma_2 \leq 2 & \Rightarrow & \text{Non-minimum phase system} \\
+\end{array}
+$$

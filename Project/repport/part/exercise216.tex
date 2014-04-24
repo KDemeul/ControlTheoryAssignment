@@ -1,1 +1,52 @@
-\subsubsection{Exercise} \lipsum[1-2]
+\subsubsection{Exercise} 
+
+The RGA of the system at frequency 0 is:
+$$
+\text{RGA}(G(0)) = G(0).\ast[G^{-1}(0)]^T 
+$$
+
+With:
+
+\begin{equation*}
+    G(0) =
+\left[
+    \begin{array}{cc}
+        \gamma_1k_1c_1 & (1-\gamma_2)k_2c_1 \\
+        (1-\gamma_1)k_1c_2 & \gamma_2k_2c_2 \\
+    \end{array}
+\right]
+\end{equation*}
+\begin{multline*}
+[G^{-1}(0)]^T = \\
+\frac{1}{k_1k_2c_1c_2(\gamma_1+\gamma_2-1)}
+\left[
+    \begin{array}{cc}
+        \gamma_2k_2c_2 & -(1-\gamma_1)k_1c_2 \\
+        -(1-\gamma_2)k_2c_1 & \gamma_1k_1c_1 \\
+    \end{array}
+\right]\\
+\end{multline*}
+\begin{multline*}
+    \text{RGA}(G(0)) =\\ 
+\frac{1}{\gamma_1+\gamma_2-1}
+\left[
+    \begin{array}{cc}
+        \gamma_1\gamma_2 & -(1-\gamma_1)(1-\gamma_2) \\
+        -(1-\gamma_1)(1-\gamma_2) & \gamma_1\gamma_2 \\
+    \end{array}
+\right]
+\end{multline*}
+
+\begin{equation}
+    \boxed{
+    \text{RGA}(G(0)) =
+    \left[
+        \begin{array}{cc}
+            \lambda & 1 - \lambda \\
+            1 - \lambda & \lambda
+        \end{array}
+    \right]
+}
+\end{equation}
+
+Where $\lambda = \frac{\gamma_1\gamma_2}{\gamma_1+\gamma_2-1}$.
