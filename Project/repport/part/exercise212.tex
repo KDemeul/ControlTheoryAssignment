@@ -25,7 +25,7 @@ $$
 
 Let $\Delta u_i = u_i - u_i^0, \Delta h_i = h_i - h_i^0, \Delta y_i = y_i - y_i^0$.
 
-Applying Taylor-expansion to the first subequation of equation (\ref{tanksyseq}) leads to:
+Applying Taylor-expansion to the first subequation of equation (\ref{tanksyseq}) leads to (with the hypothesis $\Delta h_1 << h_1^0$):
 $$
 \begin{array}{rcl}
     \frac{d\Delta h_1}{dt} & = &  
@@ -56,7 +56,7 @@ $$
 
 Where: 
 
-$$T_i = \frac{A_i}{a_i}\sqrt{2h_i^0}{g}$$
+$$\boxed{T_i = \frac{A_i}{a_i}\sqrt{2h_i^0}{g}}$$
 
 The same reasoning leads to the following equations:
 
@@ -92,8 +92,9 @@ $$
 
 The linearized system is then given by:
 \begin{equation}
+    \boxed{
     \begin{array}{rcl}
-        \frac{dx}{dt} & = & 
+        \frac{dx}{dt} & =  &  
         \left[
             \begin{array}{cccc}
                 -\frac{1}{T_1} & 0 & \frac{A_3}{A_1 T_3} & 0 \\
@@ -103,7 +104,7 @@ The linearized system is then given by:
             \end{array}
         \right] x  \\ 
         & & \\
-        & & + \left[ 
+        & + & \left[ 
             \begin{array}{cc}
                 \frac{\gamma_1k_1}{A_1} & 0 \\
                 0 & \frac{\gamma_2k_2}{A_2} \\
@@ -123,4 +124,5 @@ The linearized system is then given by:
         \\
     \end{array}
     \label{linearizedsyseq}
+}
 \end{equation}
