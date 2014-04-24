@@ -26,6 +26,7 @@ With:
     \end{array}
 \right]\\
 \end{multline*}
+Leading to:
 \begin{multline*}
     \text{RGA}(G(0)) =\\ 
 \frac{1}{\gamma_1+\gamma_2-1}
@@ -50,3 +51,27 @@ With:
 \end{equation}
 
 Where $\lambda = \frac{\gamma_1\gamma_2}{\gamma_1+\gamma_2-1}$.
+
+\paragraph{Minimum phase case}
+In that case $\gamma_1 = \gamma_2 = .625$. Thus:
+$$
+\text{RGA}(G_{m}(0)) =
+    \left[
+        \begin{array}{cc}
+            1.5625 & 0.5625 \\
+            -0.5625 & 1.5625
+        \end{array}
+    \right]
+$$
+
+\paragraph{Non-minimum phase case}
+In that case $\gamma_1 = \gamma_2 = .325$. Thus:
+$$
+\text{RGA}(G_{nm}(0)) =
+    \left[
+        \begin{array}{cc}
+            -0.5625 & 1.5625 \\
+            1.5625 & -0.5625
+        \end{array}
+    \right]
+$$
