@@ -1,61 +1,109 @@
 \subsubsection{Exercise}
+For now on we assume that the levels in the lower tanks are measured by sensors for which the output voltages $y_i$ are proportional to the water levels $h_i$:
+$$
+y_i = k_c h_i
+$$
 
-We will now compute the transfer matrix from $u$ to $y$ for the linearized system.
+Let $\Delta u_i = u_i - u_i^0, \Delta h_i = h_i - h_i^0, \Delta y_i = y_i - y_i^0$.
 
-Equation (\ref{linearizedsyseq}) can be rewritten:
+Applying Taylor-expansion to the first subequation of equation (\ref{tanksyseq}) leads to (with the hypothesis $\Delta h_1 << h_1^0$):
 $$
 \begin{array}{rcl}
-    \frac{dx}{dt} & = & Ax + Bu \\
-    y & = & Cx \\
+    \frac{d\Delta h_1}{dt} & = &  
+    - \frac{a_1}{A_1}\sqrt{2gh_1^0} - \frac{a_1}{A_1}\sqrt{\frac{g}{2h_1^0}}\Delta h_1 \\ 
+    & & 
+    + \frac{a_3}{A_1}\sqrt{2gh_3^0} + \frac{a_3}{A_1}\sqrt{\frac{g}{2h_3^0}}\Delta h_3 \\ 
+    & & 
+    + \frac{\gamma_1k_1}{A_1}u_1^0 + \frac{\gamma_1k_1}{A_1}\Delta u_1 \phantom{\sqrt{\frac{h^0}{2}}} \\ 
 \end{array}
-$$ 
-
-Using the previous notation, the transfer matrix from $u$ to $y$ is given by:
-$$
-G(s) = C(sI-A)^{-1}B
 $$
 
-Leading to compute $(sI-A)^{-1}$):
+And according to the equilibrium equations:
 \begin{multline*}
-    (sI-A)^{-1} = 
-    \left[\begin{array}{cccc}
-                s+\frac{1}{T_1} & 0 & -\frac{A_3}{A_1 T_3} & 0 \\
-                0 & s+\frac{1}{T_2} & 0 & -\frac{A_4}{A_2 T_2} \\
-                0 & 0 & s+\frac{1}{T_3} & 0 \\
-                0 & 0 & 0 & s+\frac{1}{T_4} \\
-    \end{array} \right]^{-1}
-   \\ 
-     =  
-    \left[\begin{array}{cccc} 
-            \frac{T_1}{T_1s + 1} & 0 & \frac{A_3T_1/A_1}{(T_1s + 1(T_3s + 1)} & 0\\
-    0 & \frac{T_2}{T_2s + 1} & 0 & \frac{-A_4T_4/A_2}{(T_2s + 1)(T_4 s + 1)}\\ 
-    0 & 0 & \frac{T_3}{T_3s + 1} & 0\\ 
-    0 & 0 & 0 & \frac{T_4}{T_4s + 1} \end{array}\right]
+    \frac{d\Delta h_1}{dt} =  \\
+    - \frac{a_1}{A_1}\sqrt{\frac{g}{2h_1^0}}\Delta h_1
+    + \frac{a_3}{A_1}\sqrt{\frac{g}{2h_3^0}}\Delta h_3
+    + \frac{\gamma_1k_1}{A_1}\Delta u_1 \phantom{\sqrt{\frac{h^0}{2}}}
 \end{multline*}
 
-And finally we got the following transfer function:
+Then:
+
+$$
+    \frac{d\Delta h_1}{dt} =
+    - \frac{1}{T_1}\Delta h_1
+    + \frac{A_3}{A_1T_3}\Delta h_3
+    + \frac{\gamma_1k_1}{A_1}\Delta u_1 
+$$
+
+Where: 
+
+$$\boxed{T_i = \frac{A_i}{a_i}\sqrt{2h_i^0}{g}}$$
+
+The same reasoning leads to the following equations:
+
+$$
+\begin{array}{rcl}
+    \frac{d\Delta h_1}{dt} & = &
+    - \frac{1}{T_1}\Delta h_1
+    + \frac{A_3}{A_1T_3}\Delta h_3
+    + \frac{\gamma_1k_1}{A_1}\Delta u_1 \\
+
+    \frac{d\Delta h_2}{dt} & = &
+    - \frac{1}{T_2}\Delta h_2
+    + \frac{A_4}{A_2T_4}\Delta h_4
+    + \frac{\gamma_2k_2}{A_2}\Delta u_2 \\
+    
+    \frac{d\Delta h_3}{dt} & = &
+    - \frac{1}{T_3}\Delta h_3
+    + \frac{(1-\gamma_2)k_2}{A_3}\Delta u_2 \\
+    
+    \frac{d\Delta h_4}{dt} & = &
+    - \frac{1}{T_4}\Delta h_4
+    + \frac{(1-\gamma_1)k_1}{A_4}\Delta u_1 \\
+\end{array}
+$$
+
+Let:
+
+$$
+u = \left[\begin{array}{c} \Delta u_1 \\ \Delta u_2 \end{array} \right],
+x = \left[\begin{array}{c} \Delta h_1 \\ \Delta h_2 \\ \Delta h_3 \\ \Delta h_4  \end{array} \right],
+y = \left[\begin{array}{c} \Delta y_1 \\ \Delta y_2 \end{array} \right]
+$$
+
+The linearized system is then given by:
 \begin{equation}
     \boxed{
-        \begin{array}{ccc}
-            G(s) & = &
+    \begin{array}{rcl}
+        \frac{dx}{dt} & =  &  
         \left[
-            \begin{array}{cc}
-                g_{11}(s) & g_{12}(s) \\
-                g_{21}(s) & g_{22}(s) \\
+            \begin{array}{cccc}
+                -\frac{1}{T_1} & 0 & \frac{A_3}{A_1 T_3} & 0 \\
+                0 & -\frac{1}{T_2} & 0 & \frac{A_4}{A_2 T_2} \\
+                0 & 0 & -\frac{1}{T_3} & 0 \\
+                0 & 0 & 0 & -\frac{1}{T_4} \\
             \end{array}
-        \right]
+        \right] x  \\ 
+        & & \\
+        & + & \left[ 
+            \begin{array}{cc}
+                \frac{\gamma_1k_1}{A_1} & 0 \\
+                0 & \frac{\gamma_2k_2}{A_2} \\
+                0 & \frac{(1-\gamma_2)k_2}{A_3} \\
+                \frac{(1-\gamma_1)k_1}{A_4} & 0 \\
+            \end{array}
+        \right] u 
         \\
-        \\
-        G(s) & = &  
+        & & \\
+        y & = & 
         \left[
-            \begin{array}{cc}
-                \frac{\gamma_1k_1c_1}{1 + sT_1} & \frac{(1-\gamma_2)k_2c_1}{(1+sT_3)(1+sT_1)} \\
-                \frac{(1-\gamma_1)k_1c_2}{(1+sT_4)(1+sT_2)} & \frac{\gamma_2k_2c_2}{1 + sT_2} \\
+            \begin{array}{cccc}
+                k_c & 0 & 0 & 0 \\
+                0 & k_c & 0 & 0 \\
             \end{array}
-        \right]
+        \right] x 
         \\
     \end{array}
-    }
+    \label{linearizedsyseq}
+}
 \end{equation}
-
-Where $c_i = T_i k_c / A_i$

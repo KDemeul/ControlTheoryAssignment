@@ -1,9 +1,61 @@
 \subsubsection{Exercise}
 
-The zeros of $G(s)$ are given by the zeros of $P(s)$ in the following expression:
+We will now compute the transfer matrix from $u$ to $y$ for the linearized system.
+
+Equation (\ref{linearizedsyseq}) can be rewritten:
 $$
-\det G(s) = \frac{k_1k_2c_1c_2}{\prod_{i=1}^{4} (1 + s T_i)}
-\underbrace{\left[ (1+sT_3)(1+sT_4) - \frac{(1-\gamma_1)(1 - \gamma_2)}{\gamma_1\gamma2}\right]}_{P(s)}
+\begin{array}{rcl}
+    \frac{dx}{dt} & = & Ax + Bu \\
+    y & = & Cx \\
+\end{array}
+$$ 
+
+Using the previous notation, the transfer matrix from $u$ to $y$ is given by:
+$$
+G(s) = C(sI-A)^{-1}B
 $$
 
+Leading to compute $(sI-A)^{-1}$):
+\begin{multline*}
+    (sI-A)^{-1} = 
+    \left[\begin{array}{cccc}
+                s+\frac{1}{T_1} & 0 & -\frac{A_3}{A_1 T_3} & 0 \\
+                0 & s+\frac{1}{T_2} & 0 & -\frac{A_4}{A_2 T_2} \\
+                0 & 0 & s+\frac{1}{T_3} & 0 \\
+                0 & 0 & 0 & s+\frac{1}{T_4} \\
+    \end{array} \right]^{-1}
+   \\ 
+     =  
+    \left[\begin{array}{cccc} 
+            \frac{T_1}{T_1s + 1} & 0 & \frac{A_3T_1/A_1}{(T_1s + 1(T_3s + 1)} & 0\\
+    0 & \frac{T_2}{T_2s + 1} & 0 & \frac{-A_4T_4/A_2}{(T_2s + 1)(T_4 s + 1)}\\ 
+    0 & 0 & \frac{T_3}{T_3s + 1} & 0\\ 
+    0 & 0 & 0 & \frac{T_4}{T_4s + 1} \end{array}\right]
+\end{multline*}
 
+And finally we got the following transfer function:
+\begin{equation}
+    \boxed{
+        \begin{array}{ccc}
+            G(s) & = &
+        \left[
+            \begin{array}{cc}
+                g_{11}(s) & g_{12}(s) \\
+                g_{21}(s) & g_{22}(s) \\
+            \end{array}
+        \right]
+        \\
+        \\
+        G(s) & = &  
+        \left[
+            \begin{array}{cc}
+                \frac{\gamma_1k_1c_1}{1 + sT_1} & \frac{(1-\gamma_2)k_2c_1}{(1+sT_3)(1+sT_1)} \\
+                \frac{(1-\gamma_1)k_1c_2}{(1+sT_4)(1+sT_2)} & \frac{\gamma_2k_2c_2}{1 + sT_2} \\
+            \end{array}
+        \right]
+        \\
+    \end{array}
+    }
+\end{equation}
+
+Where $c_i = T_i k_c / A_i$
