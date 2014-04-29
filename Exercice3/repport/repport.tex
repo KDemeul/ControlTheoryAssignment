@@ -1,0 +1,85 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm,amsfonts}
+\usepackage[demo]{graphicx} % REMOVE "demo" to include figures!
+
+\title{
+	Computer Exercise 3\\
+	EL2520 Control Theory and Practice
+}
+\author{
+	Jean-Alix David\\
+	jadavid@kth.se\\
+	90061T314
+	\and
+	Kilian Demeulemeester\\
+	kiliande@kth.se\\
+	910308T213
+}
+
+\newcommand{\image}[3][width=1.0\columnwidth]{
+	\begin{figure}[h!]
+		\centering
+	    \includegraphics[#1]{#2}
+		\caption{#3}
+		\label{fig:#2}
+	\end{figure}
+}
+
+\begin{document}
+	\maketitle
+
+	% Suppression of disturbances
+	\section*{Suppression of disturbances}
+
+	The weight is
+	\begin{align*}
+		W_S(s) &= \ldots
+	\end{align*}
+
+	\image{figure_1.pdf}{Simulation results}
+
+	What amplification is required for a P-controller to get the same performance, and what are the disadvantages of such a controller?
+	\par\dotfill\par\dotfill\par
+
+
+%	\image{figure_1.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
+%	\image{figure_2.pdf}{Simulink plots from exercise 3.2.4}
+%
+%	Is the controller good?
+%	\par\dotfill\par\dotfill\par
+
+	% Robustness
+	\section*{Robustness}
+	What is the condition on $T$ to guarantee stability according to the small gain theorem?
+	\par\dotfill\par\dotfill\par
+	The weights are
+	\begin{align*}
+		W_S(s) &= \ldots\\
+		W_T(s) &= \ldots
+	\end{align*}
+
+	\image{figure_2.pdf}{Simulation results}
+
+	Compare the results to the previous simulation
+	\par\dotfill\par\dotfill\par
+
+	% Control signal
+	\section*{Control signal}
+
+	The weights are
+	\begin{align*}
+		W_S(s) &= \ldots\\
+		W_T(s) &= \ldots\\
+		W_U(s) &= \ldots
+	\end{align*}
+
+	\image{figure_3.pdf}{Simulation results}
+
+	Compare the results to the previous simulations
+	\par\dotfill\par\dotfill\par
+
+
+\end{document}
