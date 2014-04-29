@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
-\usepackage[demo]{graphicx} % REMOVE "demo" to include figures!
+\usepackage{graphicx}
 
 \title{
 	Computer Exercise 3\\
@@ -19,67 +19,112 @@
 	910308T213
 }
 
-\newcommand{\image}[3][width=1.0\columnwidth]{
-	\begin{figure}[h!]
-		\centering
-	    \includegraphics[#1]{#2}
-		\caption{#3}
-		\label{fig:#2}
-	\end{figure}
-}
-
 \begin{document}
 	\maketitle
 
-	% Suppression of disturbances
-	\section*{Suppression of disturbances}
+	% Suppression of outputs
+	\section*{Suppression of outputs}
 
 	The weight is
 	\begin{align*}
-		W_S(s) &= \ldots
+        W_S(s) = \frac{10^{4}}{(s+p_1)(s+p_2)} 
 	\end{align*}
+    With $p_{1,2} = -.1 \pm \sqrt{(100\pi)^2-.1^2}$ 
+    % -1e-3 + 3.14e2i and conjugate
+    % P = 1e4
 
-	\image{figure_1.pdf}{Simulation results}
+    \begin{figure}[h!b]
+        \centering
+        \includegraphics[width=.75\columnwidth]{fig/figure1.eps}
+        \caption{Simulation results}
+    \end{figure}
 
-	What amplification is required for a P-controller to get the same performance, and what are the disadvantages of such a controller?
-	\par\dotfill\par\dotfill\par
+    The simulation results are the following:
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Signal} & \textbf{Amplitude} \\
+        \hline
+        output ($y$) & $10^{-4}$ \\
+        \hline
+        control signal ($u$) & $\approx 10$ \\
+        \hline
+        \end{tabular}
+    \end{center}
 
-
-%	\image{figure_1.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
-%	\image{figure_2.pdf}{Simulink plots from exercise 3.2.4}
-%
-%	Is the controller good?
-%	\par\dotfill\par\dotfill\par
+    Using a P-controller with $P(s) = 10^6$ leads to the same performance results. 
+    However such a controller gives less flexibility towards the frequence rejection (all frequency will have the same amplification / atenuation).
 
 	% Robustness
 	\section*{Robustness}
-	What is the condition on $T$ to guarantee stability according to the small gain theorem?
-	\par\dotfill\par\dotfill\par
-	The weights are
+
+    The small gain theroem relation is:
+    \begin{align*}
+        |T(i\omega)| < \frac{1}{|\Delta_G(i\omega)|}
+    \end{align*}
+    Here:
+    \begin{align*}
+        \frac{1}{\Delta_G(i\omega)} = \frac{|s+2|}{3}
+    \end{align*}
+
+	Therefore the weights are
 	\begin{align*}
-		W_S(s) &= \ldots\\
-		W_T(s) &= \ldots
+        W_S(s) & = \frac{10^{4}}{(s+p_1)(s+p_2)}  \\
+        W_T(s) & = \frac{3}{s+2}
 	\end{align*}
 
-	\image{figure_2.pdf}{Simulation results}
+	% \image{fig/figure2.eps}{Simulation results}
+    \begin{figure}[h!b]
+        \centering
+        \includegraphics[width=.75\columnwidth]{fig/figure2.eps}
+        \caption{Simulation results}
+    \end{figure}
 
-	Compare the results to the previous simulation
-	\par\dotfill\par\dotfill\par
+    The simulation result using $G_0$ are:
+    
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Signal} & \textbf{Amplitude} \\
+        \hline
+        output ($y$) & $10^{-2}$ \\
+        \hline
+        control signal ($u$) & $\approx 50$ \\
+        \hline
+        \end{tabular}
+    \end{center}
 
-	% Control signal
 	\section*{Control signal}
 
-	The weights are
-	\begin{align*}
-		W_S(s) &= \ldots\\
-		W_T(s) &= \ldots\\
-		W_U(s) &= \ldots
+    Here the weight are:
+	
+    \begin{align*}
+        W_S(s) &= \frac{10^{4}}{(s+p_1)(s+p_2)}  \\
+        W_T(s) &= \frac{3}{s+2} \\
+        W_U(s) &= \frac{10^{2}}{(s+p_1)(s+p_2)}  
 	\end{align*}
 
-	\image{figure_3.pdf}{Simulation results}
+    \begin{figure}[h!b]
+        \centering
+        \includegraphics[width=.75\columnwidth]{fig/figure3.eps}
+        \caption{Simulation results}
+    \end{figure}
 
-	Compare the results to the previous simulations
-	\par\dotfill\par\dotfill\par
+    The simulation result with all of the controls are:
+    \begin{center}
+        \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Signal} & \textbf{Amplitude} \\
+        \hline
+        output ($y$) & $10^{-3}$ \\
+        \hline
+        control signal ($u$) & $\approx 10$ \\
+        \hline
+        \end{tabular}
+    \end{center}
+
+    We have decrease the control signal amplitude to one fifth of the previous values. The output amplitude has also decrease. 
+
 
 
 \end{document}
