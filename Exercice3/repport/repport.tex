@@ -12,7 +12,7 @@
 \author{
 	Jean-Alix David\\
 	jadavid@kth.se\\
-	90061T314
+	900612T314
 	\and
 	Kilian Demeulemeester\\
 	kiliande@kth.se\\
@@ -23,7 +23,7 @@
 	\maketitle
 
 	% Suppression of outputs
-	\section*{Suppression of outputs}
+	\section*{Suppression of disturbances}
 
 	The weight is
 	\begin{align*}
@@ -53,18 +53,18 @@
     \end{center}
 
     Using a P-controller with $P(s) = 10^6$ leads to the same performance results. 
-    However such a controller gives less flexibility towards the frequence rejection (all frequency will have the same amplification / atenuation).
+    However such a controller gives less flexibility towards the frequency rejection (all frequency will have the same amplification / attenuation).
 
 	% Robustness
 	\section*{Robustness}
 
-    The small gain theroem relation is:
+    The small gain theorem relation is:
     \begin{align*}
         |T(i\omega)| < \frac{1}{|\Delta_G(i\omega)|}
     \end{align*}
     Here:
     \begin{align*}
-        \frac{1}{\Delta_G(i\omega)} = \frac{|s+2|}{3}
+        \frac{1}{|\Delta_G(i\omega)|} = \frac{|s+2|}{3}
     \end{align*}
 
 	Therefore the weights are
