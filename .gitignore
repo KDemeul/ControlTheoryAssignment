@@ -1,0 +1,11 @@
+## LATEX
+
+*.aux
+*.out
+*.bbl
+*.blg
+*.dvi
+*.pdf
+*.ps
+compile
+*.gif
