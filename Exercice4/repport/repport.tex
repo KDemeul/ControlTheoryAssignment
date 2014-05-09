@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
 \usepackage{amsmath,amssymb,amsthm,amsfonts}
-\usepackage[demo]{graphicx} % REMOVE "demo" to include figures!
+\usepackage{graphicx} % REMOVE "demo" to include figures!
 
 \title{
 	Computer Exercise 4\\
@@ -19,7 +19,7 @@
 	910308T213
 }
 
-\newcommand{\image}[3][width=1.0\columnwidth]{
+\newcommand{\image}[3][width=.8\columnwidth]{
 	\begin{figure}[h!]
 		\centering
 	    \includegraphics[#1]{#2}
@@ -42,20 +42,42 @@
     \frac{-.01336}{s + .02572} & 1 \end{array} \right]
 	\]
 
-	\image{figure_1.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
-	\image{figure_2.pdf}{Simulink plots from exercise 3.2.4}
+	\image{fig/figure_1.eps}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
+	\image{fig/figure_2.eps}{Simulink plots from exercise 3.2.4}
 
-	Is the controller good?
-	\par\dotfill\par\dotfill\par
-	Are the output signals coupled?
-	\par\dotfill\par\dotfill
-
+    \emph{Is the controller good? Are the output signals coupled?}
+    
+    The method depict in the subject is used to compute the controller. The two output are indeed not coupled anymore. 
+    
+    We have the following specifiations of the system:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Overshoot & Rise time & Settling time ($|y - 1| < 0.1$)\\
+        \hline
+        $14.6\%$ & $16.4$s & $38.6$s \\
+        \hline
+    \end{tabular}
+    \end{center}
+    
 	\subsection*{Glover-MacFarlane robust loop-shaping}
 
-	\image{figure_3.pdf}{Simulink plots from exercise 3.3.4}
+	\image{fig/figure_3.eps}{Simulink plots from exercise 3.3.4}
 
-	What are the similarities and differences compared to the nominal design?
-	\par\dotfill\par\dotfill
+    \emph{What are the similarities and differences compared to the nominal design?}
+    The previous figure shows the system response and the evoluton of the control sequence using the Glover-MacFarlane controller ($\gamma = 1.8$).
+    This time we have the following specifications:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Overshoot & Rise time & Settling time ($|y - 1| < 0.1$)\\
+        \hline
+        $3.0\%$ & $19.9$s & $19.5$s \\
+        \hline
+    \end{tabular}
+    \end{center}
+    As we can see, the overshoot divided by a factor $5$ and the the settling time divided by a factor $2$. This is a huge improvement. However the rise time is increase ($3$ more second).
+    
 
 	% Non-minimum phase case
 	\section*{Non-minimum phase case}
@@ -66,8 +88,8 @@
 		W(s) = \ldots
 	\]
 
-	\image{figure_4.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
-	\image{figure_5.pdf}{Simulink plots from exercise 3.2.4}
+	% \image{figure_4.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
+	% \image{figure_5.pdf}{Simulink plots from exercise 3.2.4}
 
 	Is the controller good?
 	\par\dotfill\par\dotfill\par
@@ -76,8 +98,9 @@
 
 	\subsection*{Glover-MacFarlane robust loop-shaping}
 
-	\image{figure_6.pdf}{Simulink plots from exercise 3.3.4}
+	% \image{figure_6.pdf}{Simulink plots from exercise 3.3.4}
 
-	What are the similarities and differences compared to the nominal design?
-	\par\dotfill\par\dotfill
+    \emph{What are the similarities and differences compared to the nominal design?}
 \end{document}
+
+% gamma = 2 (nmp)

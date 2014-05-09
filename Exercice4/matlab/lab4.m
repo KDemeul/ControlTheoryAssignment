@@ -1,6 +1,6 @@
-close all
-clear all
-clc
+% close all
+% clear all
+% clc
 
 s = tf('s');
 sysmp = minphase;
@@ -51,3 +51,11 @@ L0 = G*W1*Ft_mp;
 [Fr,gam] = rloop(L0,1.1);
 
 F = W1*Ft_mp*Fr;
+
+figure
+subplot(2,1,1)
+plot(U)
+grid
+subplot(2,1,2)
+plot(Y)
+grid
