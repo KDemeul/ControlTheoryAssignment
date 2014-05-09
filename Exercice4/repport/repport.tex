@@ -85,22 +85,45 @@
 	\subsection*{Dynamic decoupling}
 	The dynamic decoupling in exercise 3.2.1 is
 	\[
-		W(s) = \ldots
+        W(s) = \left[\begin{array}{cc} 
+                1 & \frac{.175}{s + .09089} \\
+    \frac{.1238}{s + .08582} & 1 \end{array} \right]
 	\]
 
-	% \image{figure_4.pdf}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
-	% \image{figure_5.pdf}{Simulink plots from exercise 3.2.4}
+	\image{fig/figure_4.eps}{Bode diagram of $\tilde{G}(s)$ derived in exercise 3.2.1}
+	\image{fig/figure_5.eps}{Simulink plots from exercise 3.2.4}
 
-	Is the controller good?
-	\par\dotfill\par\dotfill\par
-	Are the output signals coupled?
-	\par\dotfill\par\dotfill
+    \emph{Is the controller good?	Are the output signals coupled?}
+
+    The method depict in the subject is used to compute the controller. The two output are indeed not coupled anymore. 
+    We have the following specifiations of the system:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Overshoot & Rise time & Settling time ($|y - 1| < 0.1$)\\
+        \hline
+        $13.0\%$ & $49$s & $135$s \\
+        \hline
+    \end{tabular}
+    \end{center}
 
 	\subsection*{Glover-MacFarlane robust loop-shaping}
 
-	% \image{figure_6.pdf}{Simulink plots from exercise 3.3.4}
+	\image{fig/figure_6.eps}{Simulink plots from exercise 3.3.4}
 
     \emph{What are the similarities and differences compared to the nominal design?}
+    The previous figure shows the system response and the evoluton of the control sequence using the Glover-MacFarlane controller ($\gamma = 2.04$).
+    This time we have the following specifications:
+    \begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Overshoot & Rise time & Settling time ($|y - 1| < 0.1$)\\
+        \hline
+        $0\%$ & $163$s & $161$s \\
+        \hline
+    \end{tabular}
+    \end{center}
+    As we can see, the overshoot is completly cancelled by the Glover-MacFarlane controller. However the rise time and the settling time are increased by this controller (logical since both overshoot and rise time have a strong connection). The settling time is increase by a factor almost $3$ and the settling time is increase of a factor $1.2$ (not such a big difference).
 \end{document}
 
 % gamma = 2 (nmp)
