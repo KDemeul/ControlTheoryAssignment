@@ -17,37 +17,38 @@ phim = pi/3;
 
 w11 = 1;
 w22 = 1;
-w12 = minreal(-Gmp(1,2)/Gmp(1,1));
-w21 = minreal(-Gmp(2,1)/Gmp(2,2));
+w12 = minreal(-Gnmp(1,2)/Gnmp(1,1));
+w21 = minreal(-Gnmp(2,1)/Gnmp(2,2));
 
-W1 = [[w11 w12];[w21 w22]];
-Gt_mp = Gmp*W1;
-% bode(Gt_mp)
+W1 = -[[w11 w12];[w21 w22]];
+Gt_nmp = minreal(Gnmp*W1);
+% bode(Gt_nmp)
 % grid
 
-Ti_mp = 1/(2*wc_mp);
+Ti_nmp = 1/(2*wc_nmp);
 
-f11 = (1+Ti_mp*s)/(Ti_mp*s);
-f22 = (1+Ti_mp*s)/(Ti_mp*s);
+f11 = (1+Ti_nmp*s)/(Ti_nmp*s);
+f22 = (1+Ti_nmp*s)/(Ti_nmp*s);
 
-K11_mp = 10^(3.4/20);
-K22_mp = 10^(4.53/20);
+K11_nmp = 10^(-3.62/20);
+K22_nmp = 10^(-2.87/20);
 
-f11_mp = K11_mp*f11;
-f22_mp = K22_mp*f22;
+f11_nmp = K11_nmp*f11;
+f22_nmp = K22_nmp*f22;
 
-Ft_mp = [[f11_mp 0];[0 f22_mp]];
-% bode(Ft_mp*Gt_mp)
+Ft_nmp = [[f11_nmp 0];[0 f22_nmp]];
+% bode(Ft_nmp*Gt_nmp)
+% grid
 
-F_mp = W1*Ft_mp;
+F_nmp = W1*Ft_nmp;
 % figure
-% bode(F_mp*Gmp)
+% bode(F_nmp*Gnmp)
 % grid
 
-F = F_mp;
-G = Gmp;
+F = F_nmp;
+G = Gnmp;
 
-L0 = G*W1*Ft_mp;
+L0 = G*W1*Ft_nmp;
 [Fr,gam] = rloop(L0,1.1);
 
-F = W1*Ft_mp*Fr;
+F = W1*Ft_nmp*Fr;
