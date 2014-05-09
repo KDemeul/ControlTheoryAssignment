@@ -22,8 +22,8 @@ w21 = minreal(-Gmp(2,1)/Gmp(2,2));
 
 W1 = [[w11 w12];[w21 w22]];
 Gt_mp = Gmp*W1;
-bode(Gt_mp)
-grid
+% bode(Gt_mp)
+% grid
 
 Ti_mp = 1/(2*wc_mp);
 
@@ -43,3 +43,11 @@ F_mp = W1*Ft_mp;
 % figure
 % bode(F_mp*Gmp)
 % grid
+
+F = F_mp;
+G = Gmp;
+
+L0 = G*W1*Ft_mp;
+[Fr,gam] = rloop(L0,1.1);
+
+F = W1*Ft_mp*Fr;
