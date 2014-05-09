@@ -3,15 +3,15 @@
 The following procedure will be used to determine $k_1$ and $k_2$ $\left[\frac{cm^3}{s.V}\right]$:
 
 \begin{shortitemize}
+    \item Set the two pump to 50\% of the control signals,
     \item Bloc every holes of the tanks (therefore $a_i = 0, \forall i$)
         In that situation we have the following equation:
             $$
-            h_1(t) = \frac{\gamma_1k_1}{A_1}u_1(100\%)t \\
+            h_1(t) = \frac{\gamma_1k_1}{A_1}u_1(50\%)t \\
             $$
             $$
-            h_2(t) = \frac{\gamma_2k_2}{A_2}u_2(100\%)t \\
+            h_2(t) = \frac{\gamma_2k_2}{A_2}u_2(50\%)t \\
             $$
-    \item Set the two pump to 100\% of the control signals,
     \item Measure the evolution of $y_1$ and $y_2$,
     \item Using linear regression on the curves, determine $k_1$ and $k_2$.
 \end{shortitemize}
