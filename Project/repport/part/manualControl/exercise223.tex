@@ -33,8 +33,20 @@ $$
 
 Therefore solving this linear with $h_1^0$ and $h_2^0$ as parameters compute the values of $u_1$ and $u_2$. 
 Using this method with the two sets of parameters (Minimum and non-minimum case) leads to the results display in Figure \ref{manualcontrol}.
-The two curves do not merge after the transient time. Indeed, the two capter present different offset (\emph{i.e} $h_1 = 0$ do not lead to exactly $y_1 = 0$).
-However this offset is constant for each capter and verification do lead to the same level in both tank.
+
+The transient time is repported in the following table:
+
+\begin{center}
+    \footnotesize
+\begin{tabular}{|cc|}
+    \hline
+    \multicolumn{2}{|c|}{Transient time} \\
+    \hline
+    Mininum case & $98$s \\
+    Non-mininum case & $55$s \\
+    \hline
+\end{tabular}
+\end{center}
 
 \begin{figure}[h!t]
         \centering
@@ -50,4 +62,8 @@ However this offset is constant for each capter and verification do lead to the 
         \label{manualcontrol}
 \end{figure}
 
+
+
+The two curves do not merge after the transient time. Indeed, the two capter present different offset (\emph{i.e} $h_1 = 0$ do not lead to exactly $y_1 = 0$).
+However this offset is constant for each capter and verification do lead to the same level in both tank.
 

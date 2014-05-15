@@ -1,8 +1,18 @@
 \subsubsection{Exercise} 
 
+The impact of each input can be measured as:
+$$
+c = \frac{|y_{\text{paired to } u_i}|_{\infty}}{|y_{\text{not paired}}|_{\infty}}
+$$
+
 \paragraph{Minimum phase case}
 
 Figure \ref{steprepmin} shows the step response from one input at a time.
+The system is indeed coupled, as depicted by the RGA matrix:
+\begin{shortitemize}
+    \item $u_1$: Act on $y_1$ and interfer with $y_2$ ($c = 3.9$), 
+    \item $u_2$: Act on $y_2$ and interfer with $y_1$ ($c = 4.6$).
+\end{shortitemize}
 
 \begin{figure}[h!t]
         \centering
@@ -21,6 +31,11 @@ Figure \ref{steprepmin} shows the step response from one input at a time.
 \paragraph{Non-minimum phase case} 
 
 Figure \ref{steprepnonmin} shows the step response from one input at a time.
+The system is indeed coupled, as depicted by the RGA matrix:
+\begin{shortitemize}
+    \item $u_1$: Act on $y_2$ and interfer with $y_1$ ($c=2.9$),
+    \item $u_2$: Act on $y_1$ and interfer with $y_2$ ($c=2.2$).
+\end{shortitemize}
 
 \begin{figure}[h!t]
         \centering
