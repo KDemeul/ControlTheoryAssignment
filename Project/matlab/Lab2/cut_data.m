@@ -3,10 +3,10 @@ close all;
 clc;
 
 
-load('nonmin');
+load('min');
 
-tdeb = 2450;
-tfin = 2750;
+tdeb = 820;
+tfin = 1000;
 
 ind_deb = find(t>tdeb);
 ind_deb = ind_deb(1);
@@ -20,19 +20,19 @@ Ysel = Y(ind_deb:ind_fin,:);
 Usel = U(ind_deb:ind_fin,:);
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-ymin1 = 35;
-ymax1 = 50;
+ymin1 = 40;
+ymax1 = 45;
 figure,
 plot(tsel,[Rsel(:,2) Ysel(:,1)]);
 axis([tdeb, tfin, ymin1, ymax1]);
 
-ymin2 = 80;
-ymax2 = 84;
+ymin2 = 69.5;
+ymax2 = 70.5;
 figure,
 plot(tsel,[Rsel(:,1) Ysel(:,2)]);
 axis([tdeb, tfin, ymin2, ymax2]);
 
-umin = 40;
+umin = 35;
 umax = 70;
 figure,
 plot(tsel, Usel);
