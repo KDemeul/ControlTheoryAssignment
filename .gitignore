@@ -12,3 +12,4 @@ compile
 *.log
 *.zip
 *.db
+*.mdl*
