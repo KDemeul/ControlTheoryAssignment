@@ -10,13 +10,13 @@
 %---------------------------------------------
 % Font packages
 %---------------------------------------------
-\usepackage{lmodern}
+%\usepackage{lmodern}
 % \usepackage{concmath}
 % \usepackage{cmbright}
 % \usepackage{kpfonts}
 % \usepackage[adobe-utopia]{mathdesign}
 \usepackage{fouriernc}
-% \usepackage[T1]{fontenc}
+\usepackage[T1]{fontenc}
 
 %---------------------------------------------
 % Math environment packages & command
@@ -121,18 +121,22 @@ Jeremy \textsc{Pouech} \\ \texttt{pouech@kth.se} \\ 9102180255
 
 \input{part/manualControl/manualControl}
  
-% \section{Calculation of controllers}
-% 
-% \setcounter{subsection}{1}
-% \input{part/calculationOfControllers/exercise311}
-% \setcounter{subsection}{-1}
-% 
-% \section{Laboratory occasion 2}
-% 
-% \input{part/decentralizedControl/decentralizedControl}
-% 
-% \input{part/robustControl/robustControl}
-% 
-% \input{part/conclusion}
+\section{Calculation of controllers}
+
+\setcounter{subsection}{1}
+\input{part/calculationOfControllers/exercise311}
+\setcounter{subsection}{-1}
+
+\section{Laboratory occasion 2}
+
+\input{part/decentralizedControl/decentralizedControl}
+
+\input{part/robustControl/robustControl}
+
+\input{part/conclusion}
+
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{bibliography}
 
 \end{document}

@@ -63,19 +63,21 @@ end
 
 
 % ===== S AND T ANALYSIS =====
-if 0
+if 1
     S = (I+G*F)\I;
     T = (I+G*F)\G*F;
-    sigma(T,{0.001,10})
+    figure, sigma(S,{0.001,1})
+    hold on, sigma(T,{0.001,1})
+    grid
 end
 
-if 1
-    sim('closedloop');
-    figure,
-    plot(y.time,y.signals.values);
-    figure,
-    plot(u.time,u.signals.values);
-end
-
-[A,By,C,Dy] = ssdata(F);
-save reg4.MAT A By C Dy
+% if 1
+%     sim('closedloop');
+%     figure,
+%     plot(y.time,y.signals.values);
+%     figure,
+%     plot(u.time,u.signals.values);
+% end
+% 
+% [A,By,C,Dy] = ssdata(F);
+% save reg4.MAT A By C Dy

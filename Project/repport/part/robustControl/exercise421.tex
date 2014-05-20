@@ -1,1 +1,58 @@
-\subsubsection{Exercise} \lipsum[1-2]
+\subsubsection{Exercise} 
+
+
+Figure \ref{min_glover_fig} shows the reaction of the minimum phase system. 
+
+Figure \ref{nonmin_glover_fig} shows the reaction of the non-minimum phase system. 
+
+See Table \ref{analysis_glover} for the analysis of the results. 
+
+\begin{figure}[h!t]
+        \centering
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/min_glover_step.eps}
+                \caption{Step response}
+        \end{subfigure}
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/min_glover_gob.eps}
+                \caption{Cup of water response}
+        \end{subfigure}
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/min_glover_fui.eps}
+                \caption{Extra outlet response}
+        \end{subfigure}
+        \caption{Minimum phase system reactions \\ Glover-MacFarlane controller}
+        \label{min_glover_fig}
+\end{figure}
+
+\begin{figure}[h!t]
+        \centering
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/nonmin_glover_step.eps}
+                \caption{Step response}
+        \end{subfigure}
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/nonmin_glover_gob.eps}
+                \caption{Cup of water response}
+        \end{subfigure}
+        \begin{subfigure}[b]{\columnwidth}
+                \includegraphics[width=\columnwidth]{fig/nonmin_glover_fui.eps}
+                \caption{Extra outlet response}
+        \end{subfigure}
+        \caption{Non-minimum phase system reactions \\ Glover-MacFarlane controller}
+        \label{nonmin_glover_fig}
+\end{figure}
+
+\begin{table}[h!t]
+    \centering
+    \begin{tabular}{|c|ccc|}
+        \hline
+        & Rise & \multirow{2}*{Overshoot} & Disturbance \\
+        & time & & rejection \\
+        Minimum phase & & & \\
+        Non-minimum phase & & & \\
+        \hline
+    \end{tabular}
+    \caption{Step response and load disturbance analysis \\ Glover-MacFarlane controllers}
+    \label{analysis_glover}
+\end{table}

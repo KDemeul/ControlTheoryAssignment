@@ -55,14 +55,15 @@ if 0
 end
 
 % ===== S AND T ANALYSIS =====
-if 0
+if 1
     S = (I+G*F)\I;
     T = (I+G*F)\G*F;
-    figure(H1),sigma(S,{0.001,10});
-    figure(H2),sigma(T,{0.001,10});
+    figure, sigma(S,{0.001,1});
+    hold on, sigma(T,{0.001,1});
+    grid
 end
 
-if 1
+if 0
     sim('closedloop');
     figure,
     plot(y.time,y.signals.values);
