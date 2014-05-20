@@ -8,8 +8,28 @@ For Figures \ref{min_dyn_fig} to \ref{nonmin_glover_fig}, each of the following 
     \item Cup of water in tank 1,
     \item Extra outlet in tank 3.
 \end{shortitemize}
-\subsection{Decentralized control}
 
+The time to reject a perturbation is measured as the time needed by the system to return to a value $\pm 1$ of the set point.
+
+\begin{table}[h!t]
+    \centering
+    \footnotesize
+    \begin{tabular}{c|cccc}
+        & Rise & \multirow{2}*{Overshoot} & \multicolumn{2}{c}{Disturbance} \\
+        & time & & Cup & Outlet\\
+        \\
+        & \multicolumn{4}{c}{\emph{Decentralized control}} \\
+        Minimum phase & 44s & 22\% & 58s & 0s \\
+        Non-minimum phase & 228s & 24\% & 221s & 172s\\
+        \\
+        & \multicolumn{4}{c}{\emph{Glover-MacFarlane control}} \\
+        Minimum phase & 19s & 2.2\% & 36s  & 44s \\
+        Non-minimum phase & 84s & 4\% & 111s & 221s \\
+    \end{tabular}
+    \caption{Step response and load disturbance analysis}
+    \label{analysis}
+\end{table}
+\subsection{Decentralized control}
 
 \input{part/decentralizedControl/exercise411}
 \input{part/decentralizedControl/exercise412}
