@@ -13,3 +13,4 @@ compile
 *.zip
 *.db
 *.mdl*
+*~
