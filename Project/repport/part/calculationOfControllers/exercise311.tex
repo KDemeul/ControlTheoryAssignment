@@ -1,10 +1,10 @@
 \subsubsection{Exercise}
 
-In this exercise we calculate 4 controllers for the four tank process based on the values of the effective outlet hole areas, the $k_i$ and $\gamma_i$ ($i=1,2$). 
+In this exercise we calculate 4 controllers for the four-tank process based on the values of the effective outlet hole areas, the $k_i$ and $\gamma_i$ ($i=1,2$). 
 
-The four controller (two for the minimum phase case and two for non-minimum phase case) are calculated based on the work made during the computer exercise of the course \cite{exo4}. 
+The four controllers (two for the minimum phase case and two for non-minimum phase case) are calculated based on the work made during the computer exercises of the course \cite{exo4}. 
 
-The first two controller are decentralized controller. The two other are Glover-MacFarlane controllers.
+The first two controllers are decentralized controllers. The two others are Glover-MacFarlane controllers.
 
 We want to fulfill the following specifications:
 \begin{shortitemize}
@@ -38,7 +38,7 @@ We used decoupled PI-controller. The following table sum up our results:
 \end{tabular}
 \end{center}
 
-Figure \ref{sensfunction} shows the sensitivity and complementary sensitivity function for each case using the PI decentralized controllers.
+Figure \ref{sensfunction} shows the sensitivity and complementary sensitivity functions for each case using the PI decentralized controllers.
 
 \begin{figure}[h!t]
         \centering
@@ -59,7 +59,7 @@ Figure \ref{sensfunction} shows the sensitivity and complementary sensitivity fu
 
 The decentralized control obtained in the previous paragraph is then robustified using the Glover-MacFarlane method (using once again the method depicted in \cite{exo4}). 
 
-Figure \ref{sensfunctionglover} shows the sensitivity and complementary sensitivity function for each case using the robustified controller.
+Figure \ref{sensfunctionglover} shows the sensitivity and complementary sensitivity functions for each case using the robustified controller.
 
 \begin{figure}[h!t]
         \centering
@@ -71,7 +71,7 @@ Figure \ref{sensfunctionglover} shows the sensitivity and complementary sensitiv
                 \includegraphics[width=\columnwidth]{fig/sensitivity_glover_nonminphase.eps}
                 \caption{Non-minimum phase case}
         \end{subfigure}
-        \caption{Sensitivity and complementarity function using Glover-MacFarlane controller}
+        \caption{Sensitivity and complementarity functions using Glover-MacFarlane controller}
         \label{sensfunctionglover}
 \end{figure}
 
